@@ -2,39 +2,22 @@ function verificar(){
     const valor_min = document.getElementById('value_min')
     const valor_max = document.getElementById('value_max')
     
-    function verifyMin_Max(){
-        if(valor_min.value < valor_max.value){
-           // AddArray()
+    function validation(){
+        if (valor_min.value === "" || valor_max.value === ""){
+            alert("preencha os campos corretamente")
         }
-        if(valor_max.value === "" || valor_min.value === ""){
-            alert("erro")
-        }
-        if(valor_min.value > valor_max.value){
-            alert("erro")
-        }
-    } 
-    verifyMin_Max()
 
-    function AddArray(){
-        const math = valor_max.value - valor_min.value
-        const newarray = []
-        for(let i = 0; i < math; i++){
-            newarray.push([i])
-        }
-        //console.log(newarray)
-        
     }
-    AddArray()
+    validation()
 
-    function numerosmulti(){
-        const result = []
-        for(let index = 0; index < newarray.length; index ++){
-            if(newarray[index] % 2 == 0 && newarray[index] % 3 == 0){
-                result.push(newarray[index])
-            }
+    function createArrayElements(){
+        const numberentre = valor_max.value - valor_min.value
+        var array = []
+        for(let i = 0; i < numberentre; i++){
+           array.push(i)
+           console.log(array[i])
         }
-        console.log(result)
     }
-    numerosmulti()
-    
+    createArrayElements()
+
 }
